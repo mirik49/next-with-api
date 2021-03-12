@@ -1,0 +1,38 @@
+@import "./components/base/mixins";
+@import "./components/base/global";
+
+.main-link {
+  @include container;
+  display: block;
+  padding: 10px;
+
+  &:hover {
+    box-shadow: $mainShadowActive;
+  }
+}
+
+.articles {
+  &__list {
+    @include container;
+    list-style: none;
+    padding: 30px;
+  }
+  &__item {
+    &:not(:nth-last-of-type(1)) {
+      margin-bottom: 10px;
+    }
+    & a {
+      color: $linkColor;
+      &:hover {
+        color: $black;
+      }
+    }
+  }
+}
+
+.article {
+  @include container;
+  list-style: none;
+  min-width: 200px;
+  text-align: center;
+}
